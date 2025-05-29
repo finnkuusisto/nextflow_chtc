@@ -19,8 +19,16 @@ chmod +x ./nextflow
 # ./nextflow self-update
 
 # *********************************
-# Here you will want to copy data to process from /staging
-# Then move results back to staging
+# Copy input data to process from /staging
+# *********************************
+
+# *********************************
+# Run your Nextflow pipeline (apptainer profile)
+# Apptainer is already installed on CHTC nodes
+# *********************************
+
+# *********************************
+# Copy output data from pipeline to /staging
 # *********************************
 
 # clean up
