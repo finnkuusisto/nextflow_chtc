@@ -4,10 +4,11 @@
 # Base script to install nextflow
 
 # We need Java first
-wget https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.tar.gz
-tar -xzf amazon-corretto-21-x64-linux-jdk.tar.gz
-rm amazon-corretto-21-x64-linux-jdk.tar.gz
-# need to rename this for the exact latest version
+# NOTE: update as needed for latest version
+# NOTE: https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html
+wget https://corretto.aws/downloads/resources/21.0.7.6.1/amazon-corretto-21.0.7.6.1-linux-x64.tar.gz
+tar -xzf amazon-corretto-21.0.7.6.1-linux-x64.tar.gz
+rm amazon-corretto-21.0.7.6.1-linux-x64.tar.gz
 export JAVA_HOME=$PWD/amazon-corretto-21.0.7.6.1-linux-x64
 export PATH=$PWD/amazon-corretto-21.0.7.6.1-linux-x64/bin:$PATH
 
