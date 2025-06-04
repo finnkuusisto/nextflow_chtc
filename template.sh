@@ -13,6 +13,7 @@ export JAVA_HOME=$PWD/amazon-corretto-21.0.7.6.1-linux-x64
 export PATH=$PWD/amazon-corretto-21.0.7.6.1-linux-x64/bin:$PATH
 
 # Next we need to install Nextflow
+export NXF_HOME=$PWD
 curl -s https://get.nextflow.io | bash
 chmod +x ./nextflow
 # if a specific version is desired
