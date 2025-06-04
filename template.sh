@@ -28,6 +28,12 @@ chmod +x ./nextflow
 # Run your Nextflow pipeline (apptainer profile)
 # Apptainer is already installed on CHTC nodes
 # *********************************
+# need this on the CHTC machines - defaults to no execution
+echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.config
+# must include the nextflow.config in the pipeline call too
+./nextflow run nf-core/<pipeline> \
+  -c nextflow.config \
+  ...
 
 # *********************************
 # Copy output data from pipeline to /staging

@@ -41,7 +41,9 @@ wget https://ftp.ensembl.org/pub/release-114/gtf/homo_sapiens/Homo_sapiens.GRCh3
 # Apptainer is already installed on CHTC nodes
 # *********************************
 mkdir $OUTDIR
+echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.config
 ./nextflow run nf-core/rnaseq \
+  -c nextflow.config \
   --input ./samplesheet.csv \
   --outdir $OUTDIR \
   --gtf Homo_sapiens.GRCh38.114.gtf.gz \
@@ -60,6 +62,7 @@ mkdir $OUTDIR
 rm Homo_sapiens.GRCh38.cdna.all.fa.gz
 rm Homo_sapiens.GRCh38.114.gtf.gz
 
+rm nextflow.config
 rm samplesheet.csv
 rm TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz
 rm TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz
