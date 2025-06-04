@@ -60,6 +60,7 @@ mkdir $OUTDIR
 rm Homo_sapiens.GRCh38.cdna.all.fa.gz
 rm Homo_sapiens.GRCh38.114.gtf.gz
 
+rm samplesheet.csv
 rm TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz
 rm TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz
 
