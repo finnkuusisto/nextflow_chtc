@@ -31,9 +31,10 @@ wget https://github.com/hartwigmedical/testdata/raw/refs/heads/master/100k_reads
 echo -e "sample,fastq_1,fastq_2,strandedness\nTESTX_H7YRLADXX_S1_L001,TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz,TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz,auto" >> samplesheet.csv
 
 # *********************************
-# Grab the FASTA and GTF
+# Grab the FASTAs and GTF
 # *********************************
 wget https://ftp.ensembl.org/pub/release-114/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
+https://ftp.ensembl.org/pub/release-114/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 wget https://ftp.ensembl.org/pub/release-114/gtf/homo_sapiens/Homo_sapiens.GRCh38.114.gtf.gz
 
 # *********************************
@@ -47,7 +48,8 @@ echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.con
   --input ./samplesheet.csv \
   --outdir $OUTDIR \
   --gtf Homo_sapiens.GRCh38.114.gtf.gz \
-  --fasta Homo_sapiens.GRCh38.cdna.all.fa.gz \
+  --fasta Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz \
+  --transcript_fasta Homo_sapiens.GRCh38.cdna.all.fa.gz \
   --pseudo_aligner kallisto \
   --trimmer fastp \
   -profile apptainer
