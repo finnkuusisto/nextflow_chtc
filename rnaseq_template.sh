@@ -52,7 +52,9 @@ echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.con
   --transcript_fasta Homo_sapiens.GRCh38.cdna.all.fa.gz \
   --pseudo_aligner kallisto \
   --trimmer fastp \
-  -profile apptainer
+  -profile apptainer \
+  --max_memory '94 GB' \
+  --max_cpus 4
 
 # *********************************
 # Copy output data from pipeline to /staging or
