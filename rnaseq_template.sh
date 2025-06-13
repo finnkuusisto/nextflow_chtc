@@ -28,7 +28,7 @@ chmod +x ./nextflow
 wget https://github.com/hartwigmedical/testdata/raw/refs/heads/master/100k_reads_hiseq/TESTX/TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz
 wget https://github.com/hartwigmedical/testdata/raw/refs/heads/master/100k_reads_hiseq/TESTX/TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz
 # the sample sheet indicates sample names and FASTQs
-echo -e "sample,fastq_1,fastq_2,strandedness\nTESTX_H7YRLADXX_S1_L001,TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz,TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz,auto" >> samplesheet.csv
+echo -e "sample,fastq_1,fastq_2,strandedness\nTESTX_H7YRLADXX_S1_L001,TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz,TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz,reverse" >> samplesheet.csv
 
 # *********************************
 # Grab the FASTAs and GTF
