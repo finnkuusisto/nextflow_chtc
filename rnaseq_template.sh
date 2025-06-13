@@ -55,7 +55,9 @@ echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.con
   --pseudo_aligner kallisto \
   --skip_alignment \
   --trimmer fastp \
-  -profile apptainer
+  -profile apptainer \
+  --max_memory '94 GB' \
+  --max_cpus 4
 
 # *********************************
 # Copy output data from pipeline to /staging or
