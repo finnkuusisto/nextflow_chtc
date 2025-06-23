@@ -45,6 +45,7 @@ sed -E 's/^>(ENST[0-9]+)\.[0-9]+(.*)/>\1\2/' Homo_sapiens.GRCh38.cdna.all.fa > H
 # Apptainer is already installed on CHTC nodes
 # *********************************
 mkdir $OUTDIR
+# need this on the CHTC machines - defaults to no execution
 echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.config
 ./nextflow run nf-core/rnaseq \
   -c nextflow.config \
