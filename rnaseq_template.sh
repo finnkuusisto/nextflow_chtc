@@ -33,11 +33,8 @@ echo -e "sample,fastq_1,fastq_2,strandedness\nTESTX_H7YRLADXX_S1_L001,TESTX_H7YR
 # *********************************
 # Grab the FASTAs and GTF
 # *********************************
-wget https://ftp.ensembl.org/pub/release-114/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
+wget https://ftp.ensembl.org/pub/release-114/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 wget https://ftp.ensembl.org/pub/release-114/gtf/homo_sapiens/Homo_sapiens.GRCh38.114.gtf.gz
-# take version numbers off the transcripts in the cdna file - they're not in the gtf
-gunzip Homo_sapiens.GRCh38.cdna.all.fa.gz
-sed -E 's/^>(ENST[0-9]+)\.[0-9]+(.*)/>\1\2/' Homo_sapiens.GRCh38.cdna.all.fa > Homo_sapiens.GRCh38.cdna.all.noversion.fa
 
 
 # *********************************
@@ -52,7 +49,7 @@ echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.con
   --input ./samplesheet.csv \
   --outdir $OUTDIR \
   --gtf Homo_sapiens.GRCh38.114.gtf.gz \
-  --transcript_fasta Homo_sapiens.GRCh38.cdna.all.noversion.fa \
+  --fasta Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz \
   --pseudo_aligner kallisto \
   --skip_alignment \
   --trimmer fastp \
