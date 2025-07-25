@@ -1,1 +1,6 @@
+samplesheet.csv
+.nextflow*
 *~
+*.log
+*.out
+*.err
