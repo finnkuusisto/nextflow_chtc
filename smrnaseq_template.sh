@@ -43,7 +43,8 @@ echo -e "process {\n  beforeScript = 'chmod +x .command.run'\n}" >> nextflow.con
   --input ./samplesheet.csv \
   --outdir $OUTDIR \
   --genome GRCh37 \
-  -profile apptainer
+  --mirtrace_species hsa \
+  -profile apptainer,illumina
 
 # *********************************
 # Copy output data from pipeline to /staging or
